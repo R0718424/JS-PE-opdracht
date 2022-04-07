@@ -50,7 +50,7 @@ const checkPassword = () => {
     if (!isRequired(password)) {
         showError(passwordEl, 'Wachtwoord kan niet leeg zijn.');
     } else if (!isPasswordSecure(password)) {
-        showError(passwordEl, 'Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)');
+        showError(passwordEl, 'Wachtwoord is niet correct.');
     } else {
         showSuccess(passwordEl);
         valid = true;
@@ -83,7 +83,7 @@ const isEmailValid = (email) => {
 };
 
 const isPasswordSecure = (password) => {
-    const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{7,})");
     return re.test(password);
 };
 
