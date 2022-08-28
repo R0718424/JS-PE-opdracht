@@ -153,6 +153,10 @@ const debounce = (fn, delay = 500) => {
     };
 };
 
+
+
+
+
 form.addEventListener('input', debounce(function (e) {
     switch (e.target.id) {
         case 'username':
